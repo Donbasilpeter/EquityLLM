@@ -20,7 +20,7 @@ class GoogleNewsSearch:
         self.links = search_links
 
     def get_content(self):
-        contents = ""
+        contents = []
         for link in self.links:
             try:
                 response = requests.get(link, timeout=5)
@@ -28,7 +28,7 @@ class GoogleNewsSearch:
                     soup = BeautifulSoup(response.content, 'html.parser')
 
                     text_content = soup.get_text()
-                    contents= contents + text_content
+                    contents.append(text_content)
             except Exception as e:
                 print(f"Error retrieving content from {link}: {e}")
         return contents
