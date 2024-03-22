@@ -1,11 +1,9 @@
 from openai import OpenAI
 import os
-from googleNews import GoogleNewsSearch
 
 class Config:
     def __init__(self):
         self.client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
-        self.GoogleNewsSearch = GoogleNewsSearch(os.environ.get("GOOGLE_API_KEY"),os.environ.get("SEARCH_ENGINE_ID"))
         
         self.system_role = {
             "role": "system",
