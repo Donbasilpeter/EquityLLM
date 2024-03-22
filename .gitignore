@@ -5,7 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
-
+Openai-env
 # Distribution / packaging
 .Python
 build/
